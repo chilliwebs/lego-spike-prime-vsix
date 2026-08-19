@@ -104,7 +104,7 @@
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
-    "compile": "npx tsc -p ./tsconfig.json && cp -r node_modules out/ 2>/dev/null; true",
+    "compile": "npx tsc -p ./tsconfig.json",
     "watch": "tsc -watch -p ./tsconfig.json",
     "copy-deps": "mkdir -p out/node_modules/@stoprocent/noble && cp -r node_modules/@stoprocent/noble/* out/node_modules/@stoprocent/noble/",
     "dev": "npm run compile && npm run package && npm run ext_install",
