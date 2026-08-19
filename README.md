@@ -74,6 +74,22 @@ npx vsce package            # Build lego-spike-prime-0.1.0.vsix
 code --install-extension lego-spike-prime-0.1.0.vsix --force
 ```
 
+### From GitHub Release
+
+Install the latest pre-built release directly (requires VS Code 1.97+):
+
+```bash
+code --install-extension https://github.com/chilliwebs/lego-spike-prime-vsix/releases/download/v0.1.0/lego-spike-prime-0.1.0.vsix
+```
+
+Or download and install manually:
+
+```bash
+curl -L -o lego-spike-prime.vsix \
+  "https://github.com/chilliwebs/lego-spike-prime-vsix/releases/download/v0.1.0/lego-spike-prime-0.1.0.vsix"
+code --install-extension lego-spike-prime.vsix --force
+```
+
 ### From VS Code Marketplace (published)
 
 1. Open VS Code
