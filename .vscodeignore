@@ -1,0 +1,13 @@
+# Source files (only the compiled output is needed)
+src/
+tsconfig.json
+tsconfig.tsbuildinfo
+
+# CI / build config
+.github/
+
+# Git
+.gitignore
+
+# Lock files
+package-lock.json

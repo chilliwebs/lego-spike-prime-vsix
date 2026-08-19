@@ -107,6 +107,7 @@
     "compile": "npx tsc -p ./tsconfig.json && cp -r node_modules out/ 2>/dev/null; true",
     "watch": "tsc -watch -p ./tsconfig.json",
     "copy-deps": "mkdir -p out/node_modules/@stoprocent/noble && cp -r node_modules/@stoprocent/noble/* out/node_modules/@stoprocent/noble/",
+    "dev": "npm run compile && npm run package && npm run ext_install",
     "package": "npx vsce package --allow-missing-repository --no-rewrite-relative-links",
     "ext_install": "code --install-extension lego-spike-prime-0.1.0.vsix --force"
   },
@@ -119,6 +120,7 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@stoprocent/noble": "^2.7.1"
+    "@stoprocent/noble": "^2.7.1",
+    "dbus-next": "^0.10.2"
   }
 }
