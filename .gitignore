@@ -5,4 +5,3 @@ out/
 __pycache__/
 *.pyc
 build/*.mpy
-package-lock.json
