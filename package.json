@@ -1,0 +1,124 @@
+{
+  "name": "lego-spike-prime",
+  "displayName": "LEGO Spike Prime",
+  "version": "0.1.0",
+  "publisher": "lego",
+  "repository": {
+    "type": "git",
+    "url": "file:./"
+  },
+  "description": "VS Code extension for LEGO SPIKE Prime hub interaction.",
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "*"
+  ],
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "lego.runOnHub",
+        "title": "LEGO Spike Prime: Run on Hub",
+        "icon": "$(play-circle)"
+      },
+      {
+        "command": "lego.uploadToHub",
+        "title": "LEGO Spike Prime: Upload to Hub",
+        "icon": "$(cloud-upload)"
+      },
+      {
+        "command": "lego.connectHub",
+        "title": "LEGO Spike Prime: Connect to Hub",
+        "icon": "$(plug)"
+      },
+      {
+        "command": "lego.disconnectHub",
+        "title": "LEGO Spike Prime: Disconnect Hub",
+        "icon": "$(circle-slash)"
+      },
+      {
+        "command": "lego.showDeviceState",
+        "title": "LEGO Spike Prime: Show Device State",
+        "icon": "$(output)"
+      },
+      {
+        "command": "lego.stopHub",
+        "title": "LEGO Spike Prime: Stop Program",
+        "icon": "$(stop-circle)"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "lego.runOnHub"
+        },
+        {
+          "command": "lego.uploadToHub"
+        },
+        {
+          "command": "lego.connectHub"
+        },
+        {
+          "command": "lego.disconnectHub"
+        },
+        {
+          "command": "lego.showDeviceState"
+        },
+        {
+          "command": "lego.stopHub"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "lego.runOnHub",
+          "when": "resourceLangId == python",
+          "group": "navigation"
+        },
+        {
+          "command": "lego.uploadToHub",
+          "when": "resourceLangId == python",
+          "group": "navigation"
+        },
+        {
+          "command": "lego.stopHub",
+          "when": "resourceLangId == python",
+          "group": "navigation"
+        }
+      ],
+      "editor/title/context": [],
+      "statusBarContext": [
+        {
+          "command": "lego.showDeviceState",
+          "when": "lego.isConnected"
+        },
+        {
+          "command": "lego.disconnectHub",
+          "when": "lego.isConnected"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "npx tsc -p ./tsconfig.json && cp -r node_modules out/ 2>/dev/null; true",
+    "watch": "tsc -watch -p ./tsconfig.json",
+    "copy-deps": "mkdir -p out/node_modules/@stoprocent/noble && cp -r node_modules/@stoprocent/noble/* out/node_modules/@stoprocent/noble/",
+    "package": "npx vsce package --baseContentUrl . --baseImagesUrl .",
+    "ext_install": "code --install-extension lego-spike-prime-0.1.0.vsix"
+  },
+  "devDependencies": {
+    "@types/node": "20.x",
+    "@types/vscode": "^1.90.0",
+    "@vscode/vsce": "^3.9.2",
+    "chokidar-cli": "^3.0.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@stoprocent/noble": "^2.7.1"
+  }
+}

@@ -1,0 +1,8 @@
+node_modules
+out/
+*.vsix
+*.tgz
+__pycache__/
+*.pyc
+build/*.mpy
+package-lock.json

@@ -1,0 +1,1 @@
+{"root":["./src/ble-connection.ts","./src/extension.ts","./src/hub-discovery.ts","./src/statusbar.ts","./src/tool-check.ts","./src/usb-scan.ts","./src/helpers/ble-helper.ts"],"version":"5.9.3"}
